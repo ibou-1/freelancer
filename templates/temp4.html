@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Atlas Meridian Consulting | Strategy, Operations, Digital</title>
+<meta name="description" content="Atlas Meridian helps mid-sized companies grow faster with practical strategy, operations and digital consulting.">
+<style>
+:root{
+  --navy:#0b2447;--blue:#1a56db;--blue-d:#1445b4;--sky:#e8f0fe;
+  --ink:#1c2533;--gray:#5b6678;--line:#dde3ec;--bg:#f5f7fa;--white:#fff;
+  --serif:Georgia,"Times New Roman",serif;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--ink);background:var(--white);line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--blue);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+section{padding:88px 0}
+h1,h2,h3{font-family:var(--serif);color:var(--navy);line-height:1.2;font-weight:700}
+h2{font-size:clamp(1.7rem,3.4vw,2.35rem);margin-bottom:12px}
+.lead{color:var(--gray);max-width:60ch;font-size:1.05rem}
+.head{margin-bottom:48px}
+
+/* nav */
+header{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{font-family:var(--serif);font-weight:700;font-size:1.2rem;color:var(--navy);text-decoration:none;display:flex;align-items:center;gap:10px}
+.logo i{font-style:normal;display:grid;place-items:center;width:34px;height:34px;border-radius:8px;background:var(--navy);color:#fff;font-size:1rem}
+nav ul{display:flex;gap:28px;list-style:none}
+nav a{text-decoration:none;color:var(--gray);font-size:.95rem;font-weight:500}
+nav a:hover{color:var(--blue)}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 26px;border-radius:8px;font-weight:600;font-size:1rem;text-decoration:none;border:2px solid transparent;transition:background .2s,color .2s,transform .2s,border-color .2s;cursor:pointer}
+.btn-p{background:var(--blue);color:#fff}
+.btn-p:hover{background:var(--blue-d);transform:translateY(-1px)}
+.btn-s{background:transparent;color:var(--navy);border-color:var(--navy)}
+.btn-s:hover{background:var(--navy);color:#fff}
+.btn-wa{background:#1fa855;color:#fff}
+.btn-wa:hover{background:#188f48;transform:translateY(-1px)}
+
+/* hero */
+.hero{background:linear-gradient(180deg,var(--sky) 0%,var(--white) 100%);padding:96px 0 80px}
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center}
+.hero h1{font-size:clamp(2.1rem,5vw,3.4rem);margin-bottom:20px}
+.hero p{font-size:1.15rem;color:var(--gray);max-width:52ch;margin-bottom:32px}
+.ctas{display:flex;gap:14px;flex-wrap:wrap}
+.panel{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:28px;box-shadow:0 18px 40px -22px rgba(11,36,71,.35)}
+.panel h3{font-size:1.05rem;margin-bottom:16px}
+.panel li{list-style:none;display:flex;gap:12px;padding:12px 0;border-top:1px solid var(--line);color:var(--ink);font-size:.97rem}
+.panel li:first-of-type{border-top:0}
+.panel li span{color:var(--blue)}
+.in{opacity:0;transform:translateY(14px);animation:in .7s ease forwards}
+.in:nth-child(2){animation-delay:.12s}.in:nth-child(3){animation-delay:.24s}.in:nth-child(4){animation-delay:.36s}
+@keyframes in{to{opacity:1;transform:none}}
+
+/* stats */
+.stats{background:var(--navy);color:#fff;padding:48px 0}
+.stats .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;text-align:center}
+.stat b{display:block;font-family:var(--serif);font-size:2.4rem;line-height:1.1}
+.stat span{color:#b9c8e3;font-size:.93rem}
+
+/* services */
+.services{background:var(--bg)}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.card{background:var(--white);border:1px solid var(--line);border-radius:12px;padding:28px 24px;transition:border-color .2s}
+.card:hover{border-color:var(--blue)}
+.ico{display:grid;place-items:center;width:48px;height:48px;border-radius:10px;background:var(--sky);font-size:1.4rem;margin-bottom:18px}
+.card h3{font-size:1.15rem;margin-bottom:8px}
+.card p{color:var(--gray);font-size:.95rem}
+
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;counter-reset:s;position:relative}
+.step{position:relative;padding-top:8px}
+.step::before{counter-increment:s;content:counter(s);display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--blue);color:#fff;font-weight:700;margin-bottom:18px;position:relative;z-index:1}
+.step::after{content:"";position:absolute;top:30px;left:56px;right:-20px;height:2px;background:var(--line)}
+.step:last-child::after{display:none}
+.step h3{font-size:1.2rem;margin-bottom:8px}
+.step p{color:var(--gray)}
+
+/* testimonials */
+.testi{background:var(--bg)}
+.quotes{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.quote{background:var(--white);border:1px solid var(--line);border-left:4px solid var(--blue);border-radius:12px;padding:32px}
+.quote p{font-family:var(--serif);font-size:1.12rem;color:var(--navy);margin-bottom:22px}
+.who{display:flex;align-items:center;gap:14px}
+.av{display:grid;place-items:center;width:46px;height:46px;border-radius:50%;background:var(--navy);color:#fff;font-weight:700}
+.who b{display:block;font-size:.97rem}
+.who span{color:var(--gray);font-size:.88rem}
+
+/* contact */
+.contact .box{background:var(--navy);color:#fff;border-radius:16px;padding:56px 48px}
+.contact h2{color:#fff}
+.contact .lead{color:#b9c8e3;margin-bottom:36px}
+.info{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:36px}
+.info div{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:12px;padding:22px}
+.info small{display:block;color:#b9c8e3;font-size:.85rem;margin-bottom:4px}
+.info a,.info p{color:#fff;font-weight:600;text-decoration:none;font-size:1.02rem;word-break:break-word}
+.info a:hover{text-decoration:underline}
+
+footer{padding:28px 0;color:var(--gray);font-size:.88rem;text-align:center;border-top:1px solid var(--line)}
+
+@media(max-width:960px){
+  .cards{grid-template-columns:repeat(2,1fr)}
+  .hero .wrap{grid-template-columns:1fr}
+}
+@media(max-width:720px){
+  section{padding:64px 0}
+  nav ul{display:none}
+  .stats .grid{grid-template-columns:repeat(2,1fr);row-gap:32px}
+  .steps,.quotes,.info,.cards{grid-template-columns:1fr}
+  .step::after{display:none}
+  .contact .box{padding:36px 24px}
+  .btn{width:100%}
+}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  .in{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="#top" class="logo"><i>▲</i>Atlas Meridian</a>
+    <nav aria-label="Main"><ul>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#process">How it works</a></li>
+      <li><a href="#clients">Clients</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul></nav>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <h1 class="in">Practical consulting that moves your business forward</h1>
+      <p class="in">We help mid-sized companies cut costs, fix operations and launch digital products, with clear plans and measurable results in the first 90 days.</p>
+      <div class="ctas in">
+        <a class="btn btn-p" href="#contact">Book a free consultation</a>
+        <a class="btn btn-s" href="#services">Explore our services</a>
+      </div>
+    </div>
+    <aside class="panel in" aria-label="What you get">
+      <h3>What every engagement includes</h3>
+      <ul>
+        <li><span>✔</span>A dedicated senior consultant</li>
+        <li><span>✔</span>A written plan with clear milestones</li>
+        <li><span>✔</span>Weekly progress reports</li>
+        <li><span>✔</span>Hands-on handover to your team</li>
+      </ul>
+    </aside>
+  </div>
+</section>
+
+<section class="stats" aria-label="Our results">
+  <div class="wrap grid">
+    <div class="stat"><b data-n="250" data-s="+">250+</b><span>Projects delivered</span></div>
+    <div class="stat"><b data-n="15" data-s="+">15+</b><span>Years of experience</span></div>
+    <div class="stat"><b data-n="96" data-s="%">96%</b><span>Client retention</span></div>
+    <div class="stat"><b data-n="30" data-s="%">30%</b><span>Average cost reduction</span></div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="head">
+      <h2>Services built for growing companies</h2>
+      <p class="lead">Four focused practices, each led by specialists who have done the work inside real businesses.</p>
+    </div>
+    <div class="cards">
+      <article class="card"><div class="ico" aria-hidden="true">📈</div><h3>Business strategy</h3><p>Market entry, pricing and growth plans grounded in your numbers, not generic frameworks.</p></article>
+      <article class="card"><div class="ico" aria-hidden="true">⚙️</div><h3>Operations</h3><p>Streamline processes, reduce waste and build teams that deliver on time, every time.</p></article>
+      <article class="card"><div class="ico" aria-hidden="true">💻</div><h3>Digital transformation</h3><p>Choose, implement and adopt the right tools so technology serves your goals.</p></article>
+      <article class="card"><div class="ico" aria-hidden="true">🛡️</div><h3>Risk and compliance</h3><p>Identify exposure early and set up policies that keep audits and regulators satisfied.</p></article>
+    </div>
+  </div>
+</section>
+
+<section id="process">
+  <div class="wrap">
+    <div class="head">
+      <h2>How it works</h2>
+      <p class="lead">A simple process with no surprises, from first call to measurable results.</p>
+    </div>
+    <div class="steps">
+      <div class="step"><h3>Discovery call</h3><p>We listen to your goals and challenges, then tell you honestly whether we can help.</p></div>
+      <div class="step"><h3>Plan and proposal</h3><p>You receive a clear scope, timeline and fixed price within five working days.</p></div>
+      <div class="step"><h3>Delivery and handover</h3><p>We execute with your team, report weekly and train your people to keep the gains.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="testi" id="clients">
+  <div class="wrap">
+    <div class="head">
+      <h2>What our clients say</h2>
+    </div>
+    <div class="quotes">
+      <figure class="quote">
+        <p>“Atlas Meridian rebuilt our supply process in under four months. Delivery delays dropped by half and our costs followed.”</p>
+        <figcaption class="who"><div class="av" aria-hidden="true">SB</div><div><b>Sara Benali</b><span>COO, Nordia Logistics</span></div></figcaption>
+      </figure>
+      <figure class="quote">
+        <p>“Straight answers, a clear plan and a team that stayed until our people could run it alone. Highly recommended.”</p>
+        <figcaption class="who"><div class="av" aria-hidden="true">KA</div><div><b>Karim Alaoui</b><span>CEO, Sahel Industries</span></div></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="box">
+      <h2>Let’s talk about your business</h2>
+      <p class="lead">Call, email or message us on WhatsApp. We reply within one working day.</p>
+      <div class="info">
+        <div><small>📞 Phone</small><a href="tel:+1 (555) 000-0000">+1 (555) 000-0000</a></div>
+        <div><small>✉️ Email</small><a href="mailto:contact@atlasmeridian.example">contact@atlasmeridian.example</a></div>
+        <div><small>📍 Address</small><p>12 Boulevard Anfa, Casablanca, Morocco</p></div>
+      </div>
+      <a class="btn btn-wa" href="https://wa.me/+1 (555) 000-0000" target="_blank" rel="noopener">💬 Chat on WhatsApp</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap">© 2026 Atlas Meridian Consulting. All rights reserved.</div></footer>
+
+<script>
+(function(){
+  if(matchMedia("(prefers-reduced-motion: reduce)").matches||!("IntersectionObserver" in window))return;
+  var els=document.querySelectorAll(".stat b");
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      if(!e.isIntersecting)return;
+      io.unobserve(e.target);
+      var el=e.target,n=+el.dataset.n,s=el.dataset.s||"",t0=performance.now();
+      (function tick(t){
+        var p=Math.min((t-t0)/1200,1);
+        el.textContent=Math.round(n*(1-Math.pow(1-p,3)))+s;
+        if(p<1)requestAnimationFrame(tick);
+      })(t0);
+    });
+  },{threshold:.6});
+  els.forEach(function(el){io.observe(el)});
+})();
+</script>
+</body>
+</html>

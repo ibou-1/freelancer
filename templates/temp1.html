@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Alaoui &amp; Associates | Law Firm in Casablanca</title>
+<meta name="description" content="Corporate, family and property law advice in Casablanca. Clear guidance from experienced lawyers.">
+<style>
+:root{
+  --navy:#14264a;
+  --navy-dark:#0d1a33;
+  --ink:#1f2937;
+  --muted:#5b6472;
+  --line:#e3e6eb;
+  --gray:#f4f5f7;
+  --white:#fff;
+  --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+  --sans:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--ink);background:var(--white);line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+section{padding:112px 0}
+h1,h2,h3{font-family:var(--serif);color:var(--navy);font-weight:600;line-height:1.2}
+h2{font-size:clamp(1.75rem,3.5vw,2.25rem);margin-bottom:16px}
+.lead{color:var(--muted);max-width:56ch;font-size:1.0625rem}
+.head{margin-bottom:56px}
+
+/* header */
+header{border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(255,255,255,.95);z-index:10}
+.bar{display:flex;align-items:center;justify-content:space-between;height:72px}
+.brand{font-family:var(--serif);font-size:1.2rem;font-weight:600;color:var(--navy);text-decoration:none}
+nav{display:flex;gap:32px}
+nav a{text-decoration:none;color:var(--muted);font-size:.95rem}
+nav a:hover{color:var(--navy)}
+
+/* buttons */
+.btn{display:inline-block;padding:14px 28px;border-radius:4px;font-weight:600;font-size:1rem;text-decoration:none;border:1px solid var(--navy);background:var(--navy);color:var(--white);transition:background .2s}
+.btn:hover{background:var(--navy-dark)}
+.btn.wa{background:var(--white);color:var(--navy)}
+.btn.wa:hover{background:var(--gray)}
+a:focus-visible,.btn:focus-visible{outline:3px solid #7d93c4;outline-offset:3px}
+
+/* hero */
+.hero{padding:136px 0 120px}
+.hero h1{font-size:clamp(2.25rem,6vw,3.75rem);max-width:17ch;margin-bottom:28px;letter-spacing:-.01em}
+.hero p{color:var(--muted);font-size:1.125rem;max-width:50ch;margin-bottom:40px}
+
+/* services */
+.services{background:var(--gray)}
+.grid{display:grid;gap:24px}
+.grid.three{grid-template-columns:repeat(3,1fr)}
+.card{background:var(--white);border:1px solid var(--line);border-radius:4px;padding:36px 32px}
+.card h3{font-size:1.25rem;margin-bottom:12px}
+.card p{color:var(--muted);font-size:.975rem}
+
+/* about */
+.about .cols{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.stat{padding:32px 24px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+.stat b{display:block;font-family:var(--serif);font-size:2.5rem;color:var(--navy);font-weight:600;line-height:1.1}
+.stat span{color:var(--muted);font-size:.925rem}
+
+/* testimonials */
+.testimonials{background:var(--gray)}
+blockquote{font-family:var(--serif);font-size:1.075rem;color:var(--ink);margin-bottom:24px}
+.who{font-size:.9rem;color:var(--muted)}
+.who strong{display:block;color:var(--navy);font-size:.975rem}
+
+/* contact */
+.contact dl{display:grid;grid-template-columns:140px 1fr;gap:20px 24px;margin-bottom:40px;border-top:1px solid var(--line);padding-top:32px;max-width:640px}
+.contact dt{color:var(--muted)}
+.contact dd{color:var(--navy);font-weight:500}
+.contact dd a{text-decoration:none;border-bottom:1px solid var(--line)}
+.contact dd a:hover{border-color:var(--navy)}
+
+footer{border-top:1px solid var(--line);padding:32px 0;color:var(--muted);font-size:.875rem}
+
+/* scroll animation (only when JS is running) */
+.js .reveal{opacity:0;transform:translateY(14px);transition:opacity .7s ease,transform .7s ease}
+.js .reveal.in{opacity:1;transform:none}
+.js .grid .reveal:nth-child(2){transition-delay:.1s}
+.js .grid .reveal:nth-child(3){transition-delay:.2s}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .js .reveal{opacity:1;transform:none;transition:none}
+}
+
+/* responsive */
+@media (max-width:860px){
+  section{padding:80px 0}
+  .hero{padding:88px 0 80px}
+  .grid.three{grid-template-columns:1fr}
+  .about .cols{grid-template-columns:1fr;gap:48px}
+  nav{display:none}
+}
+@media (max-width:520px){
+  .contact dl{grid-template-columns:1fr;gap:4px}
+  .contact dd{margin-bottom:16px}
+  .btn{display:block;text-align:center;margin-bottom:12px}
+  .stat b{font-size:2rem}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <a class="brand" href="#top">Alaoui &amp; Associates</a>
+    <nav aria-label="Main">
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#testimonials">Clients</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="wrap">
+      <h1 class="reveal">Clear legal advice for the decisions that matter</h1>
+      <p class="reveal">We advise businesses and families in Casablanca on corporate, family and property law. Plain answers, honest fees, and a lawyer who returns your call.</p>
+      <a class="btn reveal" href="#contact">Book a consultation</a>
+    </div>
+  </section>
+
+  <section class="services" id="services">
+    <div class="wrap">
+      <div class="head reveal">
+        <h2>What we do</h2>
+        <p class="lead">Three areas of practice, handled by lawyers who focus on them every day.</p>
+      </div>
+      <div class="grid three">
+        <article class="card reveal">
+          <h3>Corporate law</h3>
+          <p>Company formation, shareholder agreements, contracts and commercial disputes for startups and established businesses.</p>
+        </article>
+        <article class="card reveal">
+          <h3>Family law</h3>
+          <p>Divorce, custody, inheritance and family agreements, handled with discretion and care for everyone involved.</p>
+        </article>
+        <article class="card reveal">
+          <h3>Property law</h3>
+          <p>Purchases, sales, leases and title checks, so you know exactly what you are signing before you sign it.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="wrap cols">
+      <div class="reveal">
+        <h2>A firm built on trust</h2>
+        <p class="lead">Since 2006 we have worked with individuals and companies who want straightforward advice and a clear plan. We explain your options, give you a fee estimate upfront, and keep you informed at every step.</p>
+      </div>
+      <div class="stats reveal">
+        <div class="stat"><b>18</b><span>Years in practice</span></div>
+        <div class="stat"><b>2,400+</b><span>Cases handled</span></div>
+        <div class="stat"><b>6</b><span>Lawyers on the team</span></div>
+        <div class="stat"><b>24 h</b><span>Typical reply time</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonials" id="testimonials">
+    <div class="wrap">
+      <div class="head reveal">
+        <h2>What clients say</h2>
+      </div>
+      <div class="grid three">
+        <figure class="card reveal">
+          <blockquote>“They explained every step of our company setup in simple terms. We were operating within three weeks.”</blockquote>
+          <figcaption class="who"><strong>Karim B.</strong>Founder, logistics startup</figcaption>
+        </figure>
+        <figure class="card reveal">
+          <blockquote>“A difficult time made easier. Professional, calm and always available when I had questions.”</blockquote>
+          <figcaption class="who"><strong>Salma R.</strong>Family law client</figcaption>
+        </figure>
+        <figure class="card reveal">
+          <blockquote>“They found a problem in the property title that saved me from a very costly mistake.”</blockquote>
+          <figcaption class="who"><strong>Youssef M.</strong>Property buyer</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <div class="head reveal">
+        <h2>Get in touch</h2>
+        <p class="lead">Call, email or message us on WhatsApp to arrange a first consultation.</p>
+      </div>
+      <dl class="reveal">
+        <dt>Phone</dt>
+        <dd><a href="tel:+1 (555) 000-0000">+1 (555) 000-0000</a></dd>
+        <dt>Email</dt>
+        <dd><a href="mailto:contact@alaoui-law.example">contact@alaoui-law.example</a></dd>
+        <dt>Address</dt>
+        <dd>25 Boulevard Zerktouni, Casablanca 20000, Morocco</dd>
+      </dl>
+      <a class="btn wa reveal" href="https://wa.me/+1 (555) 000-0000" target="_blank" rel="noopener">Message us on WhatsApp</a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">&copy; <span id="y">2026</span> Alaoui &amp; Associates. All rights reserved.</div>
+</footer>
+
+<script>
+(function(){
+  var root=document.documentElement;
+  root.classList.add('js');
+  document.getElementById('y').textContent=new Date().getFullYear();
+  var els=document.querySelectorAll('.reveal');
+  if(!('IntersectionObserver' in window)){
+    els.forEach(function(e){e.classList.add('in')});
+    return;
+  }
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target)}
+    });
+  },{threshold:.15,rootMargin:'0px 0px -40px 0px'});
+  els.forEach(function(e){io.observe(e)});
+})();
+</script>
+</body>
+</html>

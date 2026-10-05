@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Maison Aurèle — Skin Atelier, Casablanca</title>
+<meta name="description" content="Maison Aurèle is a private skin atelier offering bespoke facials, gold rituals and skin consultations.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Raleway:wght@200;300;400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0a0a0a; --bg2:#101010; --gold:#c9a45c; --gold-soft:#e3c98f;
+  --text:#e9e4d8; --muted:#9c968a; --line:rgba(201,164,92,.28);
+  --serif:'Playfair Display',Georgia,'Times New Roman',serif;
+  --sans:'Raleway','Helvetica Neue',Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);font-weight:300;line-height:1.8;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit}
+:focus-visible{outline:1px solid var(--gold);outline-offset:4px}
+section{padding:8rem 1.5rem}
+.wrap{max-width:1080px;margin:0 auto}
+h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.2}
+h2{font-size:clamp(1.9rem,4vw,2.9rem);text-align:center;margin-bottom:1rem}
+.rule{width:56px;height:1px;background:var(--gold);margin:1.6rem auto 4rem}
+
+/* Hero */
+.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:6rem 1.5rem;position:relative;background:radial-gradient(ellipse at 50% 38%,rgba(201,164,92,.13),transparent 60%),var(--bg)}
+.brand{font-family:var(--sans);font-weight:200;letter-spacing:.5em;font-size:.8rem;color:var(--gold);margin-bottom:2.4rem;padding-left:.5em}
+.hero h1{font-size:clamp(2.6rem,8vw,6rem);letter-spacing:.01em;max-width:14ch}
+.hero h1 em{color:var(--gold-soft)}
+.hero p{max-width:34rem;margin:1.8rem auto 3rem;color:var(--muted);font-size:1.05rem;letter-spacing:.04em}
+.btn{display:inline-block;padding:1rem 2.8rem;border:1px solid var(--gold);color:var(--gold);text-decoration:none;font-size:.85rem;letter-spacing:.25em;text-transform:uppercase;transition:background .4s,color .4s}
+.btn:hover{background:var(--gold);color:var(--bg)}
+.hero .line{position:absolute;bottom:0;left:50%;width:1px;height:70px;background:linear-gradient(var(--gold),transparent)}
+
+/* Services */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.card{border:1px solid var(--line);padding:3rem 2rem;text-align:center;background:var(--bg2);transition:border-color .4s,transform .4s}
+.card:hover{border-color:var(--gold);transform:translateY(-4px)}
+.card h3{font-size:1.45rem;margin-bottom:1rem;color:var(--gold-soft)}
+.card p{color:var(--muted);font-size:.95rem}
+.card .from{display:block;margin-top:1.6rem;font-size:.8rem;letter-spacing:.2em;color:var(--gold)}
+
+/* Story */
+.story{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.story .wrap{max-width:720px;text-align:center}
+.story p{color:var(--muted);font-size:1.08rem;margin-bottom:1.5rem}
+.story p:first-of-type{color:var(--text);font-family:var(--serif);font-size:1.35rem;line-height:1.7}
+
+/* Quote */
+.quote{text-align:center}
+.quote blockquote{font-family:var(--serif);font-style:italic;font-size:clamp(1.5rem,3.6vw,2.4rem);line-height:1.5;max-width:820px;margin:0 auto}
+.quote blockquote::before{content:"\201C";display:block;font-size:4rem;line-height:1;color:var(--gold);margin-bottom:.5rem}
+.quote cite{display:block;margin-top:2rem;font-style:normal;color:var(--gold);letter-spacing:.2em;font-size:.85rem}
+
+/* Contact */
+.contact{text-align:center;border-top:1px solid var(--line)}
+.contact .lead{color:var(--muted);max-width:30rem;margin:0 auto 3rem}
+.links{display:flex;flex-direction:column;align-items:center;gap:1.1rem;margin-bottom:3rem}
+.links a.t{font-family:var(--serif);font-size:clamp(1.4rem,3vw,2rem);text-decoration:none;transition:color .3s}
+.links a.t:hover{color:var(--gold)}
+.wa{display:inline-flex;align-items:center;gap:.8rem;background:var(--gold);color:var(--bg);padding:1rem 2.4rem;text-decoration:none;font-size:.85rem;letter-spacing:.2em;text-transform:uppercase;font-weight:400;transition:background .3s}
+.wa:hover{background:var(--gold-soft)}
+.wa svg{width:20px;height:20px;fill:currentColor}
+footer{padding:2.5rem 1.5rem;text-align:center;color:var(--muted);font-size:.78rem;letter-spacing:.15em;border-top:1px solid var(--line)}
+
+/* Motion: one hero sequence + scroll reveals */
+.in{opacity:0;transform:translateY(28px);animation:rise 1.2s cubic-bezier(.2,.7,.2,1) forwards}
+.d1{animation-delay:.2s}.d2{animation-delay:.55s}.d3{animation-delay:.9s}.d4{animation-delay:1.25s}
+.reveal{opacity:0;transform:translateY(36px);transition:opacity 1s ease,transform 1s cubic-bezier(.2,.7,.2,1)}
+.reveal.show{opacity:1;transform:none}
+.cards .reveal:nth-child(2){transition-delay:.15s}.cards .reveal:nth-child(3){transition-delay:.3s}
+@keyframes rise{to{opacity:1;transform:none}}
+
+@media(max-width:820px){
+  section{padding:5.5rem 1.25rem}
+  .cards{grid-template-columns:1fr}
+  .brand{letter-spacing:.35em}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .in,.reveal{opacity:1;transform:none;animation:none;transition:none}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="brand in d1">MAISON AURÈLE</div>
+  <h1 class="in d2">Radiance, <em>refined</em> by hand.</h1>
+  <p class="in d3">A private skin atelier in Casablanca. Bespoke facials and gold rituals, one guest at a time.</p>
+  <a class="btn in d4" href="#contact">Book a consultation</a>
+  <span class="line" aria-hidden="true"></span>
+</header>
+
+<section id="services">
+  <div class="wrap">
+    <h2 class="reveal">Our services</h2>
+    <div class="rule reveal"></div>
+    <div class="cards">
+      <article class="card reveal">
+        <h3>Signature Facial</h3>
+        <p>A 90-minute treatment built around your skin on the day you arrive, using argan, rose and botanical actives.</p>
+        <span class="from">From 1,200 $</span>
+      </article>
+      <article class="card reveal">
+        <h3>The Gold Ritual</h3>
+        <p>24-carat gold leaf, lifting massage and a slow cleansing sequence for deep glow and firmness.</p>
+        <span class="from">From 2,400 $</span>
+      </article>
+      <article class="card reveal">
+        <h3>Skin Consultation</h3>
+        <p>A one-on-one analysis with our skin specialist, followed by a personal care plan to use at home.</p>
+        <span class="from">From 600 $</span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="story" id="story">
+  <div class="wrap">
+    <h2 class="reveal">Our story</h2>
+    <div class="rule reveal"></div>
+    <p class="reveal">Maison Aurèle began in a small room with one treatment table and a belief that skincare should feel unhurried.</p>
+    <p class="reveal">We draw on Moroccan beauty traditions, from argan oil to rose water and the hammam, and pair them with modern skin science. Every product is chosen for what it does, and every treatment is shaped around the person in the chair.</p>
+    <p class="reveal">We see a small number of guests each day, so each one has our full attention.</p>
+  </div>
+</section>
+
+<section class="quote">
+  <div class="wrap">
+    <blockquote class="reveal">I walked in tired and walked out glowing. It is the only place where I feel truly looked after.</blockquote>
+    <cite class="reveal">Salma B., Guest since 2022</cite>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <h2 class="reveal">Book your visit</h2>
+    <div class="rule reveal"></div>
+    <p class="lead reveal">Appointments are by invitation and confirmation. Call, write or message us to reserve your time.</p>
+    <div class="links reveal">
+      <a class="t" href="tel:+1 (555) 000-0000">+1 (555) 000-0000</a>
+      <a class="t" href="mailto:contact@maisonaurele.com">contact@maisonaurele.com</a>
+    </div>
+    <a class="wa reveal" href="https://wa.me/+1 (555) 000-0000?text=Hello%20Maison%20Aur%C3%A8le%2C%20I%27d%20like%20to%20book%20an%20appointment." target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 18.15h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.23 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.87.85-.87 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.1-.23-.16-.48-.29z"/></svg>
+      Message on WhatsApp
+    </a>
+  </div>
+</section>
+
+<footer>MAISON AURÈLE &nbsp;·&nbsp; CASABLANCA &nbsp;·&nbsp; BY APPOINTMENT ONLY</footer>
+
+<script>
+(function(){
+  var els=document.querySelectorAll('.reveal');
+  if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('show')});return}
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if(en.isIntersecting){en.target.classList.add('show');io.unobserve(en.target)}
+    });
+  },{threshold:.15,rootMargin:'0px 0px -6% 0px'});
+  els.forEach(function(e){io.observe(e)});
+})();
+</script>
+</body>
+</html>

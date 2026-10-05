@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nar Grill – Charcoal grill & tagine house</title>
+<meta name="description" content="Charcoal-grilled meat, slow tagines and fresh bread. Open every day until midnight.">
+<style>
+:root{
+  --red:#D62828; --orange:#F77F00; --yellow:#FCBF49; --paprika:#3A0E08; --ember:#7A1E0E; --sun:#FFE8A8;
+  --display:"Arial Black","Impact","Helvetica Neue",Arial,sans-serif;
+  --body:"Trebuchet MS","Segoe UI",Verdana,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);color:var(--paprika);background:var(--sun);line-height:1.6;font-size:1.05rem;overflow-x:hidden}
+a{color:inherit}
+:focus-visible{outline:4px solid var(--paprika);outline-offset:3px}
+h1,h2,h3{font-family:var(--display);line-height:1;letter-spacing:-.02em;font-weight:900}
+.wrap{max-width:1120px;margin:0 auto;padding:0 1.25rem}
+section{padding:6rem 0}
+
+/* Buttons */
+.btn{display:inline-block;font-family:var(--display);font-size:1.05rem;text-decoration:none;padding:1rem 2rem;border-radius:999px;border:3px solid var(--paprika);background:var(--yellow);color:var(--paprika);box-shadow:5px 5px 0 var(--paprika);transition:transform .15s,box-shadow .15s}
+.btn:hover{transform:translate(3px,3px);box-shadow:2px 2px 0 var(--paprika)}
+.btn.wa{background:#25D366}
+
+/* Nav */
+nav{position:absolute;top:0;left:0;right:0;z-index:5;display:flex;justify-content:space-between;align-items:center;padding:1.25rem}
+.logo{font-family:var(--display);font-size:1.5rem;color:var(--yellow);text-decoration:none}
+nav ul{display:flex;gap:1.5rem;list-style:none}
+nav ul a{color:#fff;text-decoration:none;font-weight:700}
+nav ul a:hover{color:var(--yellow)}
+
+/* Hero */
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;color:#fff;padding:7rem 0 5rem;
+  background:
+   radial-gradient(circle at 80% 20%,var(--yellow) 0,transparent 35%),
+   radial-gradient(circle at 15% 85%,var(--orange) 0,transparent 45%),
+   linear-gradient(135deg,var(--red),var(--ember));}
+.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(58,14,8,.55),rgba(58,14,8,.8))}
+.hero .wrap{position:relative}
+.hero h1{font-size:clamp(3.2rem,12vw,9rem);text-transform:uppercase;max-width:11ch;text-shadow:5px 5px 0 var(--red)}
+.hero p{font-size:clamp(1.1rem,2.5vw,1.5rem);max-width:34rem;margin:1.5rem 0 2.25rem;color:var(--sun)}
+.hero h1,.hero p,.hero .btn{animation:rise .8s cubic-bezier(.2,.8,.2,1) both}
+.hero p{animation-delay:.15s}.hero .btn{animation-delay:.3s}
+@keyframes rise{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:none}}
+
+/* Section headings */
+.title{font-size:clamp(2.2rem,6vw,4.5rem);text-transform:uppercase;margin-bottom:3rem}
+
+/* Featured */
+.menu{background:var(--sun)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1.5rem}
+.card{padding:2rem 1.5rem;border:3px solid var(--paprika);border-radius:24px;box-shadow:8px 8px 0 var(--paprika)}
+.card:nth-child(1){background:var(--orange)}
+.card:nth-child(2){background:var(--yellow)}
+.card:nth-child(3){background:var(--red);color:#fff}
+.card:nth-child(4){background:#fff}
+.card:nth-child(even){transform:translateY(1.5rem)}
+.card .ico{font-size:3.5rem;display:block;margin-bottom:1rem}
+.card h3{font-size:1.5rem;margin-bottom:.5rem}
+.card .price{display:inline-block;margin-top:1rem;font-family:var(--display);font-size:1.25rem}
+
+/* About */
+.about{background:var(--paprika);color:var(--sun)}
+.about .grid{display:grid;grid-template-columns:1.2fr 1fr;gap:3rem;align-items:center}
+.about h2{color:var(--yellow)}
+.about p+p{margin-top:1rem}
+.stats{display:grid;gap:1rem}
+.stat{background:var(--orange);color:var(--paprika);border-radius:20px;padding:1.25rem 1.5rem;font-weight:700}
+.stat b{display:block;font-family:var(--display);font-size:2.4rem;line-height:1}
+.stat:nth-child(2){background:var(--yellow)}
+.stat:nth-child(3){background:var(--red);color:#fff}
+
+/* Gallery */
+.gallery .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.tile{aspect-ratio:4/3;border-radius:20px;border:3px solid var(--paprika);display:flex;align-items:flex-end;padding:1rem;font-family:var(--display);font-size:1.1rem;color:var(--paprika)}
+.tile:nth-child(1){background:var(--red);color:#fff;grid-row:span 2;aspect-ratio:auto}
+.tile:nth-child(2){background:var(--yellow)}
+.tile:nth-child(3){background:var(--orange)}
+.tile:nth-child(4){background:var(--ember);color:var(--sun)}
+.tile:nth-child(5){background:#fff}
+.tile:nth-child(6){background:var(--orange);grid-column:span 2;aspect-ratio:auto;min-height:150px}
+
+/* Contact */
+.contact{background:linear-gradient(135deg,var(--orange),var(--red));color:#fff}
+.contact .title{color:var(--paprika)}
+.info{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem;margin-bottom:3rem}
+.info div{background:var(--paprika);border-radius:20px;padding:1.5rem}
+.info small{display:block;color:var(--yellow);font-weight:700;margin-bottom:.35rem}
+.info a,.info span{font-size:1.2rem;font-weight:700;text-decoration:none;word-break:break-word}
+.info a:hover{color:var(--yellow)}
+footer{background:var(--paprika);color:var(--sun);text-align:center;padding:1.5rem;font-size:.9rem}
+
+/* Scroll animation (progressive enhancement: visible by default) */
+@supports (animation-timeline:view()){
+  .reveal{animation:reveal linear both;animation-timeline:view();animation-range:entry 0% entry 45%}
+  @keyframes reveal{from{opacity:0;transform:translateY(60px) scale(.96)}to{opacity:1;transform:none}}
+  .card.reveal:nth-child(even){animation-name:reveal-even}
+  @keyframes reveal-even{from{opacity:0;transform:translateY(100px) scale(.96)}to{opacity:1;transform:translateY(1.5rem)}}
+}
+
+@media(max-width:800px){
+  section{padding:4rem 0}
+  nav ul{display:none}
+  .about .grid{grid-template-columns:1fr}
+  .gallery .grid{grid-template-columns:1fr 1fr}
+  .tile:nth-child(1){grid-row:auto;aspect-ratio:4/3}
+  .tile:nth-child(6){grid-column:span 2}
+  .card:nth-child(even){transform:none}
+}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <nav>
+    <a class="logo" href="#">Nar Grill</a>
+    <ul>
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+  <div class="wrap">
+    <h1>Fire up your appetite</h1>
+    <p>Charcoal-grilled meat, slow-cooked tagines and bread baked every hour. Open daily until midnight.</p>
+    <a class="btn" href="#contact">Book a table</a>
+  </div>
+</header>
+
+<section class="menu" id="menu">
+  <div class="wrap">
+    <h2 class="title reveal">Fan favorites</h2>
+    <div class="cards">
+      <article class="card reveal"><span class="ico" aria-hidden="true">🍖</span><h3>Mixed grill</h3><p>Kefta, lamb chops and chicken skewers over charcoal, with grilled tomatoes.</p><span class="price">95 $</span></article>
+      <article class="card reveal"><span class="ico" aria-hidden="true">🍲</span><h3>Lamb tagine</h3><p>Slow-cooked with prunes, almonds and a hint of cinnamon.</p><span class="price">85 $</span></article>
+      <article class="card reveal"><span class="ico" aria-hidden="true">🌶️</span><h3>Harissa wings</h3><p>Crispy, sticky and properly spicy. Served with cooling mint yogurt.</p><span class="price">45 $</span></article>
+      <article class="card reveal"><span class="ico" aria-hidden="true">🍯</span><h3>Honey pastilla</h3><p>Warm, flaky and dusted with cinnamon sugar. Made for sharing.</p><span class="price">40 $</span></article>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="wrap grid">
+    <div class="reveal">
+      <h2 class="title">Cooked over real fire</h2>
+      <p>Nar Grill started as a single charcoal stand and a family recipe book. Today we still light the coals at noon, marinate every cut by hand and bake our bread in small batches all day.</p>
+      <p>Come for a quick lunch, a long family dinner or a private event for up to 80 guests. We cater too.</p>
+    </div>
+    <div class="stats reveal">
+      <div class="stat"><b>12 yrs</b>grilling on charcoal</div>
+      <div class="stat"><b>40+</b>recipes from the family book</div>
+      <div class="stat"><b>80</b>seats for private events</div>
+    </div>
+  </div>
+</section>
+
+<section class="gallery" id="gallery">
+  <div class="wrap">
+    <h2 class="title reveal">A taste of the place</h2>
+    <div class="grid">
+      <div class="tile reveal">The grill</div>
+      <div class="tile reveal">Fresh bread</div>
+      <div class="tile reveal">Tagine pots</div>
+      <div class="tile reveal">Mint tea</div>
+      <div class="tile reveal">The terrace</div>
+      <div class="tile reveal">Private events</div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <h2 class="title reveal">Come hungry</h2>
+    <div class="info reveal">
+      <div><small>Phone</small><a href="tel:+1 (555) 000-0000">+1 (555) 000-0000</a></div>
+      <div><small>Email</small><a href="mailto:hello@nargrill.example">hello@nargrill.example</a></div>
+      <div><small>Address</small><span>12 Rue de la Liberté, Casablanca</span></div>
+    </div>
+    <a class="btn wa reveal" href="https://wa.me/+1 (555) 000-0000?text=Hello%20Nar%20Grill%2C%20I%27d%20like%20to%20book%20a%20table" target="_blank" rel="noopener">Chat on WhatsApp</a>
+  </div>
+</section>
+
+<footer>© 2026 Nar Grill. Open daily, 12:00 to midnight.</footer>
+
+</body>
+</html>
